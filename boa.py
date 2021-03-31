@@ -69,20 +69,6 @@ smpl_female = SMPL(config.SMPL_MODEL_DIR, gender='female', create_transl=False).
 # -- end
 
 # mean teacher help functions
-def tensor2im_batch(image_tensor, imtype=np.uint8, cent=0., factor=255.):
-    image_numpy = image_tensor.cpu().float().numpy()
-    image_numpy = (image_numpy - np.min(image_numpy)) / np.max(image_numpy - np.min(image_numpy))
-    image_numpy = (np.transpose(image_numpy, (0,2,3,1)) + cent) * factor
-    image_numpy = image_numpy[:,:,:,::-1]
-    return image_numpy.astype(imtype)
-
-def tensor2im(image_tensor, imtype=np.uint8, cent=0., factor=255.):
-    image_numpy = image_tensor.cpu().float().numpy()
-    image_numpy = (image_numpy - np.min(image_numpy)) / np.max(image_numpy - np.min(image_numpy))
-    image_numpy = (np.transpose(image_numpy, (1, 2, 0)) + cent) * factor
-    image_numpy = image_numpy[:,:,::-1]
-    return image_numpy.astype(imtype)
-
 def convert_crop_cam_to_orig_img(cam, bbox, img_width, img_height):
     '''
     Convert predicted camera from cropped image coordinates
@@ -444,16 +430,6 @@ class Adaptator():
                 posed_mesh_error = torch.sqrt(((gt_vertices - pred_vts) ** 2).sum(dim=-1)).mean(dim=-1).cpu().numpy()
                 results['ume'] = unposed_mesh_error
                 results['pme'] = posed_mesh_error
-
-            if self.options.saveimg:
-                pred_cam_t = torch.stack([pred_cam[:,1],
-                                            pred_cam[:,2],
-                                            2*5000./(224 * pred_cam[:,0] +1e-9)],dim=-1)
-                oriimages = tensor2im_batch(oriimages)
-                image_pred = self.renderer.visualize_tb(pred_vts, pred_cam_t, oriimages)
-                for iii in range(len(image_pred)):
-                    image_pred_i = image_pred[iii].astype(np.uint8)
-                    cv2.imwrite(f'{self.exppath}/{self.options.dataset_name}_{self.global_step}_{iii}.png', image_pred_i)
         return results
 
     def get_history(self,):
