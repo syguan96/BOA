@@ -1,7 +1,7 @@
 # BOA - Bilevel Online Adaptation
 Code repository for the paper:  
 **Bilevel Online Adaptation for Out-of-Domain Human Mesh Reconstruction**  
-Shanyan Guan\*, [Jingwei Xu\*](https://scholar.google.com/citations?user=7oepLUoAAAAJ&hl=en), [Yunbo Wang<sup>#</sup>](http://people.csail.mit.edu/yunbo/), Bingbing Ni<sup>#</sup>, Xiaokang Yang  
+Shanyan Guan\*, [Jingwei Xu\*](https://scholar.google.com/citations?user=7oepLUoAAAAJ&hl=en), [Yunbo Wang<sup>†</sup>](http://people.csail.mit.edu/yunbo/), Bingbing Ni<sup>†</sup>, Xiaokang Yang  
 CVPR 2021  
 [[Paper](https://arxiv.org/pdf/2103.16449.pdf)] [[project page](https://sites.google.com/view/humanmeshboa)] [[Supp](https://jbox.sjtu.edu.cn/l/qFD0qN)]
 
