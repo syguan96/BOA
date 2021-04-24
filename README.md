@@ -60,7 +60,7 @@ Note that this is the guideline to get data according to the *#PS* protocol (i.e
   1. Download Human 3.6M. [Downloader](https://github.com/kotaro-inoue/human3.6m_downloader) is suggested.
   2. Unpack files: 
      ```
-     
+     cd utils/data_preprocess
      python unpack_h36m.py
      ```
      And then edit `H36M_ROOT` in the `config.py`.
