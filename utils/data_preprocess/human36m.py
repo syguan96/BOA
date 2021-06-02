@@ -8,6 +8,7 @@ import argparse
 from spacepy import pycdf
 from tqdm import tqdm
 import pickle as pkl
+from utils.kp_utils import get_perm_idxs
 
 CAMERA_DICT = {
     '55011271': 'cam1',
@@ -24,7 +25,7 @@ def h36m_train_extract(dataset_path, out_path, extract_img=False):
 
     # convert joints to global order
     h36m_idx = [11, 6, 7, 8, 1, 2, 3, 12, 24, 14, 15, 17, 18, 19, 25, 26, 27]
-    global_idx = [14, 3, 4, 5, 2, 1, 0, 16, 12, 17, 18, 9, 10, 11, 8, 7, 6]
+    global_idx = [i-25 for i in get_perm_idxs(src='spin', dst='h36m')]
 
     # structs we use
     imgnames_, scales_, centers_, parts_, Ss_  = [], [], [], [], []
