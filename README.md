@@ -78,9 +78,6 @@ Note that this is the guideline to get data according to the *#PS* protocol (i.e
      python process_data.py --dataset h36m
      ```
 
-## To be fixed
-When I try the code on the 3080 GPU with Pytorch 1.8 and CUDA 11.1, the adaptation speed is slower more than 10 times. I will fix this issue ASAP. 
-
 ## References
 Here are some great resources we benefit:
 - [SPIN](https://github.com/nkolot/SPIN)
