@@ -1,6 +1,8 @@
 # BOA - Bilevel Online Adaptation
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilevel-online-adaptation-for-out-of-domain/3d-human-pose-estimation-on-3dpw)](https://paperswithcode.com/sota/3d-human-pose-estimation-on-3dpw?p=bilevel-online-adaptation-for-out-of-domain)
 
+**🌟🌟🌟 New: Stronger DynaBOA is available at https://github.com/syguan96/DynaBOA.**
+
 Code repository for the paper:  
 **Bilevel Online Adaptation for Out-of-Domain Human Mesh Reconstruction**  
 Shanyan Guan\*, [Jingwei Xu\*](https://scholar.google.com/citations?user=7oepLUoAAAAJ&hl=en), [Yunbo Wang<sup>†</sup>](http://people.csail.mit.edu/yunbo/), Bingbing Ni<sup>†</sup>, Xiaokang Yang  
